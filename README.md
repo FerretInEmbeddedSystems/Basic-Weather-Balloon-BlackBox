@@ -8,7 +8,7 @@ flowchart TB
     subgraph HW["Physical Hardware"]
         MCU["Microcontroller"]
         S["Sensors"]
-        MD["Data Recorder"]
+        DR["Data Recorder"]
         P["Power System"]
     end
 
@@ -18,13 +18,9 @@ flowchart TB
     end
 
     S -->|"Measurements"| SD
-    SD --> RC
-    RC --> MC
-    MC -->|"Control signals"| MD
-    MD --> M
-    MCU -.->|"Executes"| FW
-    P --> MCU
-    P --> MD
+    SD --> MCU
+    MCU --> |"Read/Write to SD"|RC
+    RC -->|"Control signals"| DR
 ```
 
 ## Project Structure Tree
