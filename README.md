@@ -19,11 +19,11 @@ flowchart TB
 
     P --> MCU
     MCU --> S
-    MCU --> DR
-    S -->|"Measurements"| SD
-    SD --> MCU
+    MCU <--> DR
+    S --> SD
+    SD --> |"Get Measurements"|MCU
     MCU <--> RC
-    RC -->|"Read/Write to SD"| DR
+    RC <-->|"Read/Write to SD"| DR
 ```
 
 ## Project Structure Tree
