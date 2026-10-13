@@ -22,8 +22,7 @@ flowchart TB
     MCU --> DR
     S -->|"Measurements"| SD
     SD --> MCU
-    MCU --> RC
-    RC --> MCU
+    MCU <--> RC
     RC -->|"Read/Write to SD"| DR
 ```
 
