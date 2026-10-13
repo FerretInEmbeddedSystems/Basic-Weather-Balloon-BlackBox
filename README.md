@@ -17,10 +17,14 @@ flowchart TB
         RC["Read/Write for SD Recorder"]
     end
 
+    P --> MCU
+    MCU --> S
+    MCU --> DR
     S -->|"Measurements"| SD
     SD --> MCU
-    MCU --> |"Read/Write to SD"|RC
-    RC -->|"Control signals"| DR
+    MCU --> RC
+    RC --> MCU
+    RC -->|"Read/Write to SD"| DR
 ```
 
 ## Project Structure Tree
