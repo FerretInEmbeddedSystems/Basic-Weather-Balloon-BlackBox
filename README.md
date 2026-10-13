@@ -19,7 +19,7 @@ flowchart TB
 
     P --> MCU
     MCU --> S
-    MCU <--> DR
+    MCU --> DR
     S --> SD
     SD --> |"Get Measurements"|MCU
     MCU <--> RC
